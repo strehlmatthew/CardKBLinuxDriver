@@ -67,7 +67,20 @@ The modifiers will automatically unlatch immediately after.
 
 ---
 
-## 8. LINUX DRIVER COMPILATION & SETUP
+## 8. FLASHING THE FIRMWARE
+To use this custom firmware, you must flash it to the CardKB's onboard ATmega8A microcontroller. You can do this using a standard Arduino AVR ISP flasher, or a Raspberry Pi Pico using the included custom Python script.
+
+**CARDKB PROGRAMMER PIN OUT (For Pi Pico):**
+* **PWR** : ONBOARD OR 3.3V
+* **GND** : GND
+* **GPIO 0** : RST
+* **GPIO 2** : SCK
+* **GPIO 3** : MOSI
+* **GPIO 4** : MISO
+
+---
+
+## 9. LINUX DRIVER COMPILATION & SETUP
 To use this firmware on a Linux machine (like a Raspberry Pi), you must compile and run the included C driver to translate the raw I2C data into native keystrokes.
 
 **Compile the driver via terminal:**
