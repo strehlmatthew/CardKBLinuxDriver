@@ -11,6 +11,7 @@
 #define I2C_DEV "/dev/i2c-3"
 #define CARDKB_ADDR 0x5F
 
+
 int hid_to_linux(int hid) {
     switch(hid) {
         case 0x1E: return KEY_1; case 0x1F: return KEY_2; case 0x20: return KEY_3;
@@ -33,6 +34,15 @@ int hid_to_linux(int hid) {
         case 0x37: return KEY_DOT;       case 0x50: return KEY_LEFT;
         case 0x52: return KEY_UP;        case 0x51: return KEY_DOWN;
         case 0x4F: return KEY_RIGHT;
+        
+        // --- THE MISSING PUNCTUATION BLOCK ---
+        case 0x2D: return KEY_MINUS;     case 0x2E: return KEY_EQUAL;
+        case 0x2F: return KEY_LEFTBRACE; case 0x30: return KEY_RIGHTBRACE;
+        case 0x31: return KEY_BACKSLASH; case 0x33: return KEY_SEMICOLON;
+        case 0x34: return KEY_APOSTROPHE;case 0x35: return KEY_GRAVE;
+        case 0x38: return KEY_SLASH;
+        // -------------------------------------
+
         case 0x3A: return KEY_F1; case 0x3B: return KEY_F2; case 0x3C: return KEY_F3;
         case 0x3D: return KEY_F4; case 0x3E: return KEY_F5; case 0x3F: return KEY_F6;
         case 0x40: return KEY_F7; case 0x41: return KEY_F8; case 0x42: return KEY_F9;
